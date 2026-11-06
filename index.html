@@ -42,14 +42,6 @@
     .text-glow {
       text-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
     }
-    @keyframes pulse-ring {
-      0% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.05); opacity: 0.4; }
-      100% { transform: scale(0.95); opacity: 0.8; }
-    }
-    .pulse-effect {
-      animation: pulse-ring 2s infinite ease-in-out;
-    }
   </style>
 </head>
 <body class="bg-gray-950 text-gray-100 antialiased selection:bg-indigo-500 selection:text-white pb-24 sm:pb-0">
@@ -88,7 +80,7 @@
   <header class="gradient-hero pt-10 pb-20 px-4 sm:px-6 relative overflow-hidden border-b border-gray-900">
     <div class="max-w-4xl mx-auto text-center relative z-10">
       
-      <!-- Psychology Badges -->
+      <!-- Badges -->
       <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
         <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex items-center gap-1.5">
           <span>📹</span> 108 Step-by-Step HD Videos
@@ -319,7 +311,7 @@
         <p class="text-xs text-gray-400 mt-1">Direct UPI / GPay / PhonePe / Cards Payment</p>
       </div>
 
-      <form id="paymentForm" onsubmit="handleRazorpayPayment(event)" class="space-y-4">
+      <form id="paymentForm" onsubmit="handleRazorpayDirectPayment(event)" class="space-y-4">
         <!-- Name Field -->
         <div>
           <label class="block text-xs font-semibold text-gray-300 mb-1.5">Aapka Naam (Full Name)</label>
@@ -356,7 +348,7 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT: RAZORPAY SERVERLESS ORDER INTEGRATION -->
+  <!-- JAVASCRIPT: DIRECT RAZORPAY CHECKOUT (ZERO BACKEND DEPENDENCY) -->
   <script>
     // Countdown Timer logic
     let time = 14 * 60 + 32;
@@ -383,8 +375,10 @@
       document.getElementById('checkoutModal').classList.add('hidden');
     }
 
-    // Razorpay Integration using Official Serverless Order ID
-    async function handleRazorpayPayment(e) {
+    // Direct Instant Razorpay Checkout
+    const RAZORPAY_KEY = "rzp_live_ToVknbUG7BuLYL";
+
+    function handleRazorpayDirectPayment(e) {
       e.preventDefault();
       
       const name = document.getElementById('custName').value.trim();
@@ -395,77 +389,47 @@
 
       errMsg.classList.add('hidden');
       payBtn.disabled = true;
-      btnText.innerText = "Connecting Razorpay...";
+      btnText.innerText = "Opening UPI / Payment...";
+
+      // Standard Direct Razorpay Options (Instant popup without server lag)
+      const options = {
+        key: RAZORPAY_KEY,
+        amount: 100, // 100 paise = ₹1.00 for testing
+        currency: "INR",
+        name: "Meta Ads Mastery 2026",
+        description: "100+ Videos + Master Resell Rights",
+        image: "https://cdn-icons-png.flaticon.com/512/732/732200.png",
+        prefill: {
+          name: name,
+          contact: phone
+        },
+        theme: {
+          color: "#4f46e5"
+        },
+        handler: function (response) {
+          // Redirect immediately to Google Drive access page
+          window.location.href = `success.html?payment_id=${response.razorpay_payment_id}`;
+        },
+        modal: {
+          ondismiss: function() {
+            payBtn.disabled = false;
+            btnText.innerText = "PAY ₹1 VIA UPI / CARDS";
+          }
+        }
+      };
 
       try {
-        // 1. Create official Razorpay Order via Vercel Serverless Function
-        const orderRes = await fetch('/api/create-order', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ amount: 100 })
-        });
-
-        const orderData = await orderRes.json();
-
-        if (!orderRes.ok || !orderData.orderId) {
-          throw new Error(orderData.error?.description || "Failed to create order. Please try again.");
-        }
-
-        // 2. Open Razorpay Checkout with the generated Order ID
-        const options = {
-          key: orderData.keyId,
-          amount: orderData.amount, // 100 paise = ₹1.00
-          currency: orderData.currency,
-          name: "Meta Ads Mastery 2026",
-          description: "100+ Videos + Master Resell Rights",
-          order_id: orderData.orderId, // Official Order ID
-          image: "https://cdn-icons-png.flaticon.com/512/732/732200.png",
-          prefill: {
-            name: name,
-            contact: phone
-          },
-          theme: {
-            color: "#4f46e5"
-          },
-          handler: async function (response) {
-            // Trigger Meta Conversions API (CAPI Server-Side Tracking)
-            try {
-              fetch('/api/capi', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  eventName: 'Purchase',
-                  phone: phone,
-                  name: name,
-                  value: 1.00
-                })
-              });
-            } catch (err) {
-              console.error('CAPI Error:', err);
-            }
-            // Redirect immediately to success page
-            window.location.href = `success.html?payment_id=${response.razorpay_payment_id}`;
-          },
-          modal: {
-            ondismiss: function() {
-              payBtn.disabled = false;
-              btnText.innerText = "PAY ₹1 VIA UPI / CARDS";
-            }
-          }
-        };
-
         const rzp = new Razorpay(options);
-        rzp.on('payment.failed', function (response){
-          errMsg.innerText = response.error.description || "Payment failed. Please try again.";
+        rzp.on('payment.failed', function (resp){
+          errMsg.innerText = resp.error.description || "Payment failed. Please try with another UPI app.";
           errMsg.classList.remove('hidden');
           payBtn.disabled = false;
           btnText.innerText = "PAY ₹1 VIA UPI / CARDS";
         });
-
         rzp.open();
       } catch (err) {
-        console.error("Payment error:", err);
-        errMsg.innerText = err.message || "Payment initiation error. Please try again.";
+        console.error("Razorpay Open Error:", err);
+        errMsg.innerText = "Error opening payment gateway. Please refresh and try again.";
         errMsg.classList.remove('hidden');
         payBtn.disabled = false;
         btnText.innerText = "PAY ₹1 VIA UPI / CARDS";
