@@ -50,173 +50,252 @@
     .pulse-effect {
       animation: pulse-ring 2s infinite ease-in-out;
     }
+    @keyframes slide-in {
+      from { transform: translateY(100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-toast {
+      animation: slide-in 0.4s ease-out forwards;
+    }
   </style>
 </head>
 <body class="bg-gray-950 text-gray-100 antialiased selection:bg-indigo-500 selection:text-white pb-24 sm:pb-0">
 
   <!-- Top Urgency Banner -->
   <div class="bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 py-2.5 px-4 text-center text-xs sm:text-sm font-bold tracking-wide text-white flex items-center justify-center gap-2 shadow-md">
-    <span>🔥 FLASH SALE: 94% OFF FOR TODAY ONLY!</span>
+    <span>🔥 SPECIAL ACCESS OFFER (LIMITED SPOTS)</span>
     <span class="hidden sm:inline">•</span>
-    <span class="bg-black/30 px-2 py-0.5 rounded text-amber-200" id="timer">Offer ends in: 14m 32s</span>
+    <span class="bg-black/40 px-2 py-0.5 rounded text-amber-200" id="timer">Offer closes in: 14m 32s</span>
+  </div>
+
+  <!-- Trust Header / Company Authority -->
+  <div class="border-b border-gray-900 bg-gray-950/80 backdrop-blur-md py-3 px-6">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-black text-white text-sm shadow-md shadow-indigo-500/30">
+          Q
+        </div>
+        <div>
+          <div class="font-extrabold text-sm text-white tracking-tight">QubeTech <span class="text-indigo-400">Systems</span></div>
+          <div class="text-[10px] text-gray-400 font-medium flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+            Verified IT & Marketing Portal
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+        <span>Instant UPI / GPay Active</span>
+      </div>
+    </div>
   </div>
 
   <!-- Hero Section -->
-  <header class="gradient-hero pt-12 pb-20 px-4 sm:px-6 relative overflow-hidden border-b border-gray-900">
+  <header class="gradient-hero pt-10 pb-20 px-4 sm:px-6 relative overflow-hidden border-b border-gray-900">
     <div class="max-w-4xl mx-auto text-center relative z-10">
       
-      <!-- Badges -->
+      <!-- Psychology Badges -->
       <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
-        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-          🚀 100+ Step-by-Step HD Videos
+        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 flex items-center gap-1.5">
+          <span>📹</span> 108 Step-by-Step HD Videos
         </span>
-        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-          📜 100% Master Resell Rights Included
+        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
+          <span>💎</span> Master Resell Rights (MRR)
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
+          <span>⚡</span> 100% Instant Delivery
         </span>
       </div>
 
       <!-- Main Headline -->
       <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight mb-6">
-        Master Meta (Facebook & Instagram) Ads In 2026 & Generate <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 text-glow">5X to 10X ROAS</span>
+        The Ultimate Meta Ads Blueprint For 2026: Generate <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-400 to-emerald-400 text-glow">5X to 10X ROAS</span> On Autopilot
       </h1>
 
-      <p class="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
-        Zero experience needed. Learn how to launch profitable ads, generate low-cost leads, scale dropshipping, <span class="text-amber-300 font-semibold">+ Resell this entire course & keep 100% of the profits!</span>
+      <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+        Stop wasting money on failed campaigns. Learn the exact battle-tested scaling frameworks used by high-performance agencies <strong class="text-white">+ Own 100% Master Resell Rights to sell & keep all profits!</strong>
       </p>
 
-      <!-- Price Box & CTA -->
-      <div class="bg-gray-900/90 border-2 border-indigo-500/50 rounded-2xl p-6 sm:p-8 max-w-xl mx-auto shadow-2xl shadow-indigo-500/10 mb-8 backdrop-blur-sm">
-        <div class="flex items-center justify-center gap-3 mb-3">
-          <span class="text-gray-400 line-through text-lg sm:text-xl font-medium">Regular: ₹4,999</span>
-          <span class="bg-red-500/20 text-red-400 text-xs font-bold px-2.5 py-1 rounded-full border border-red-500/30">SAVE 94%</span>
+      <!-- Price Box & Call To Action (Set to ₹1 Test Price) -->
+      <div class="bg-gray-900/90 border-2 border-indigo-500/50 rounded-3xl p-6 sm:p-8 max-w-xl mx-auto shadow-2xl shadow-indigo-500/10 mb-8 backdrop-blur-sm relative">
+        
+        <!-- Spots Remaining Live Bar -->
+        <div class="mb-4 bg-gray-950 p-2.5 rounded-xl border border-gray-800 flex items-center justify-between text-xs">
+          <span class="text-gray-400 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping inline-block"></span>
+            Spots Remaining Today:
+          </span>
+          <span class="font-extrabold text-amber-400 font-mono text-sm">4 of 50 Left</span>
+        </div>
+
+        <div class="flex items-center justify-center gap-3 mb-2">
+          <span class="text-gray-400 line-through text-lg font-medium">Original Value: ₹4,999</span>
+          <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-500/30">SPECIAL TEST PRICE</span>
         </div>
         
-        <div class="text-4xl sm:text-6xl font-black text-white mb-2">
-          ₹299 <span class="text-base font-normal text-gray-400">One-Time Fee</span>
+        <div class="text-5xl sm:text-7xl font-black text-white mb-2 tracking-tight">
+          ₹1 <span class="text-base font-normal text-gray-400">One-Time Only</span>
         </div>
+
         <p class="text-emerald-400 text-xs sm:text-sm font-semibold mb-6 flex items-center justify-center gap-1.5">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-          Instant Google Drive Access Delivery via UPI / Card
+          Instant Access to 100+ Videos on Google Drive
         </p>
 
         <!-- Buy Button -->
-        <button onclick="openCheckoutModal()" class="w-full py-4 px-8 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-indigo-600 hover:from-emerald-400 hover:to-indigo-500 text-white font-extrabold text-lg sm:text-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 cursor-pointer">
-          <span>GET INSTANT ACCESS @ ₹299</span>
+        <button onclick="openCheckoutModal()" class="w-full py-4 px-8 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-indigo-600 hover:from-emerald-400 hover:to-indigo-500 text-white font-extrabold text-lg sm:text-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 cursor-pointer">
+          <span>GET FULL ACCESS NOW FOR ₹1</span>
           <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </button>
 
-        <div class="flex items-center justify-center gap-4 mt-4 text-xs text-gray-400">
-          <span>🔒 100% Safe Checkout</span>
-          <span>⚡ Direct UPI (GPay/PhonePe/Paytm)</span>
-          <span>♾️ Lifetime Access</span>
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-5 text-xs text-gray-400">
+          <span class="flex items-center gap-1">🔒 256-Bit SSL Razorpay</span>
+          <span class="flex items-center gap-1">⚡ Direct PhonePe/GPay/Paytm</span>
+          <span class="flex items-center gap-1">♾️ Lifetime Access</span>
         </div>
       </div>
 
-      <!-- Quick Proof Badges -->
+      <!-- Trust Pillars -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto pt-6 text-left">
-        <div class="bg-gray-900/40 border border-gray-800 p-3.5 rounded-xl">
-          <div class="text-xl font-bold text-white">100+ Videos</div>
-          <div class="text-xs text-gray-400">Beginner to Master</div>
+        <div class="bg-gray-900/50 border border-gray-800 p-4 rounded-2xl">
+          <div class="text-2xl font-black text-white">108 HD</div>
+          <div class="text-xs text-gray-400 mt-1">Step-by-Step Videos</div>
         </div>
-        <div class="bg-gray-900/40 border border-gray-800 p-3.5 rounded-xl">
-          <div class="text-xl font-bold text-indigo-400">Resell Rights</div>
-          <div class="text-xs text-gray-400">Keep 100% Profits</div>
+        <div class="bg-gray-900/50 border border-gray-800 p-4 rounded-2xl">
+          <div class="text-2xl font-black text-amber-400">100% MRR</div>
+          <div class="text-xs text-gray-400 mt-1">Resell & Keep Profit</div>
         </div>
-        <div class="bg-gray-900/40 border border-gray-800 p-3.5 rounded-xl">
-          <div class="text-xl font-bold text-emerald-400">Google Drive</div>
-          <div class="text-xs text-gray-400">Instant Download</div>
+        <div class="bg-gray-900/50 border border-gray-800 p-4 rounded-2xl">
+          <div class="text-2xl font-black text-emerald-400">Drive Link</div>
+          <div class="text-xs text-gray-400 mt-1">Watch or Download</div>
         </div>
-        <div class="bg-gray-900/40 border border-gray-800 p-3.5 rounded-xl">
-          <div class="text-xl font-bold text-amber-400">₹7,500+</div>
-          <div class="text-xs text-gray-400">Free Bonus Tools</div>
+        <div class="bg-gray-900/50 border border-gray-800 p-4 rounded-2xl">
+          <div class="text-2xl font-black text-sky-400">₹7,500+</div>
+          <div class="text-xs text-gray-400 mt-1">Free Included Bonuses</div>
         </div>
       </div>
 
     </div>
   </header>
 
-  <!-- HIGHLIGHT: Master Resell Rights (MRR) Feature -->
+  <!-- PSYCHOLOGY SECTION 1: Why This Is a No-Brainer Money Maker -->
   <section class="py-16 px-4 sm:px-6 bg-gradient-to-b from-indigo-950/40 via-gray-950 to-gray-950 border-b border-indigo-900/30">
     <div class="max-w-4xl mx-auto">
       <div class="border-2 border-amber-500/40 bg-gradient-to-br from-amber-500/10 via-gray-900 to-indigo-950/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-        <div class="absolute -right-12 -top-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl"></div>
-
-        <div class="flex items-center gap-3 mb-4">
-          <span class="bg-amber-500 text-black text-xs font-black uppercase px-3 py-1 rounded-full">SPECIAL BONUS FEATURE</span>
-          <span class="text-amber-400 text-xs font-semibold">100% Profit Is Yours</span>
+        
+        <div class="flex items-center gap-2 mb-4">
+          <span class="bg-amber-500 text-black text-xs font-black uppercase px-3 py-1 rounded-full">🔥 THE RESELL ADVANTAGE</span>
+          <span class="text-amber-400 text-xs font-semibold">100% Commercial Rights</span>
         </div>
 
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4">
-          Master Resell Rights (MRR) License Included!
+        <h2 class="text-2xl sm:text-4xl font-black text-white mb-4">
+          How You Can Make Money From This On Day 1:
         </h2>
         
         <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-          Is course ko sirf seekhne ke liye use mat kijiye. Iske sath aapko milta hai <strong class="text-white">Master Resell Rights License</strong>. Iska matlab aap is pure 100+ video course ko aage <strong class="text-amber-300">₹299, ₹499 ya ₹999</strong> par kitni bhi baar bech sakte hain aur sara paisa seedha aapke UPI/bank account me aayega!
+          Aapko sirf video dekh kar baithna nahi hai. Is course ke sath hum aapko de rahe hain <strong class="text-amber-300">Master Resell Rights (MRR)</strong>. Iska simple calculation samajhiye:
         </p>
 
-        <div class="grid sm:grid-cols-3 gap-4 text-sm font-semibold">
-          <div class="flex items-center gap-2 bg-gray-900/80 p-3 rounded-xl border border-gray-800">
-            <span class="text-emerald-400 text-lg">✓</span>
-            <span>Learn Meta Ads Skill</span>
+        <div class="grid sm:grid-cols-3 gap-4 mb-8">
+          <div class="bg-gray-950/90 border border-gray-800 p-4 rounded-2xl text-center">
+            <div class="text-xs text-gray-400 font-semibold mb-1">Step 1: Buy Once</div>
+            <div class="text-2xl font-black text-white mb-1">Get Instant Access</div>
+            <div class="text-[11px] text-gray-400">Pura 100+ videos ka Google Drive folder aapka.</div>
           </div>
-          <div class="flex items-center gap-2 bg-gray-900/80 p-3 rounded-xl border border-gray-800">
-            <span class="text-emerald-400 text-lg">✓</span>
-            <span>Resell to Unlimited People</span>
+          <div class="bg-gray-950/90 border border-gray-800 p-4 rounded-2xl text-center">
+            <div class="text-xs text-gray-400 font-semibold mb-1">Step 2: Resell Anywhere</div>
+            <div class="text-2xl font-black text-amber-400 mb-1">Sell for ₹299 - ₹499</div>
+            <div class="text-[11px] text-gray-400">Apne WhatsApp, Instagram ya dosto ko becho.</div>
           </div>
-          <div class="flex items-center gap-2 bg-gray-900/80 p-3 rounded-xl border border-gray-800">
-            <span class="text-emerald-400 text-lg">✓</span>
-            <span>Keep 100% of Revenue</span>
+          <div class="bg-gray-950/90 border border-gray-800 p-4 rounded-2xl text-center">
+            <div class="text-xs text-gray-400 font-semibold mb-1">Step 3: 100% Profit</div>
+            <div class="text-2xl font-black text-emerald-400 mb-1">Direct In Your Bank</div>
+            <div class="text-[11px] text-gray-400">Hume koi commission nahi dena. Sab aapka!</div>
           </div>
         </div>
+
+        <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl text-xs sm:text-sm text-amber-200 text-center font-medium">
+          💡 <strong>Math:</strong> Agar aapne pure mahine me sirf <strong>10 logon</strong> ko bhi ₹299 me becha, toh aapne <strong>₹2,990</strong> kama liye — bina koi khud ka course banaye!
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- What You Will Learn (100+ Videos Breakdown) -->
-  <section class="py-20 px-4 sm:px-6 max-w-5xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Full Course Curriculum</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4">100+ Videos Covering Every Secret</h2>
-      <p class="text-gray-400 mt-3 text-sm sm:text-base">Basic se lekar advanced scaling tak har cheez screen par live karke dikhayi gayi hai.</p>
+  <!-- PSYCHOLOGY SECTION 2: Why Other Gurus Fail You vs What's Inside -->
+  <section class="py-16 px-4 sm:px-6 max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">The Honest Truth</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3">Why 90% People Lose Money on Meta Ads</h2>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-6">
-      <!-- Module 1 -->
+      <div class="bg-red-950/20 border border-red-900/40 p-6 rounded-2xl">
+        <h4 class="text-red-400 font-bold text-lg mb-3 flex items-center gap-2">
+          <span>❌</span> What Free YouTube Videos Teach:
+        </h4>
+        <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400">
+          <li class="flex items-start gap-2">• Outdated 2021 button-clicking tutorials.</li>
+          <li class="flex items-start gap-2">• No real strategy on how to write hooks.</li>
+          <li class="flex items-start gap-2">• Zero guidance on how to avoid Facebook ad account bans.</li>
+          <li class="flex items-start gap-2">• Result: ₹2,000 ad budget spent with 0 sales.</li>
+        </ul>
+      </div>
+
+      <div class="bg-emerald-950/20 border border-emerald-900/40 p-6 rounded-2xl">
+        <h4 class="text-emerald-400 font-bold text-lg mb-3 flex items-center gap-2">
+          <span>✅</span> What You Learn Inside This 108-Video Vault:
+        </h4>
+        <ul class="space-y-2.5 text-xs sm:text-sm text-gray-200">
+          <li class="flex items-start gap-2">• 2026 AI-driven Broad Targeting & Advantage+ Mastery.</li>
+          <li class="flex items-start gap-2">• Exact psychology behind scroll-stopping reel hooks.</li>
+          <li class="flex items-start gap-2">• Conversions API (CAPI) & Pixel tracking step-by-step.</li>
+          <li class="flex items-start gap-2">• How to scale from ₹500/day to ₹15,000/day profitably.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Curriculum Breakdown -->
+  <section class="py-16 px-4 sm:px-6 max-w-5xl mx-auto border-t border-gray-900">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-bold uppercase tracking-wider text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Syllabus Breakdown</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-4">100+ Step-by-Step Practical Modules</h2>
+      <p class="text-gray-400 mt-3 text-sm sm:text-base">Har video screen record karke samjhayi gayi hai taaki aap sath-sath live practical kar sakein.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
       <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl hover:border-indigo-500/50 transition">
         <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">Module 1 • Foundation</div>
         <h3 class="text-xl font-bold text-white mb-2">Business Manager & Pixel Setup</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Domain verification, Conversions API (CAPI), Pixel setup without code, account ban protection framework.</p>
       </div>
 
-      <!-- Module 2 -->
       <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl hover:border-indigo-500/50 transition">
         <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">Module 2 • Creatives</div>
         <h3 class="text-xl font-bold text-white mb-2">High-Converting Ad Creatives & Copy</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Scroll-stopping hooks, video ad frameworks, carousel mastery, and psychological ad copy formulas that force clicks.</p>
       </div>
 
-      <!-- Module 3 -->
       <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl hover:border-indigo-500/50 transition">
         <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">Module 3 • Targeting</div>
         <h3 class="text-xl font-bold text-white mb-2">Audience Targeting & Lookalikes</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Broad targeting vs Detailed targeting, custom audiences, 1% - 5% Lookalikes, and finding untapped buyers in India & globally.</p>
       </div>
 
-      <!-- Module 4 -->
       <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl hover:border-indigo-500/50 transition">
         <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">Module 4 • Optimization</div>
         <h3 class="text-xl font-bold text-white mb-2">CBO vs ABO & Bidding Strategies</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Budget allocation, cost cap vs highest volume, automated rules, and when to kill or scale an ad set.</p>
       </div>
 
-      <!-- Module 5 -->
       <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl hover:border-indigo-500/50 transition">
         <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">Module 5 • Scaling</div>
         <h3 class="text-xl font-bold text-white mb-2">Retargeting & Massive Scaling</h3>
         <p class="text-gray-400 text-sm leading-relaxed">Horizontal & vertical scaling strategies to scale from ₹500/day to ₹20,000+/day without ruining your ROAS.</p>
       </div>
 
-      <!-- Module 6 -->
       <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl hover:border-indigo-500/50 transition">
         <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">Module 6 • Niche Blueprints</div>
         <h3 class="text-xl font-bold text-white mb-2">Dropshipping, Lead Gen & E-com</h3>
@@ -229,13 +308,13 @@
   <section class="py-16 px-4 sm:px-6 bg-gray-900/60 border-y border-gray-900">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Included Free</span>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Free Value Stack</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">4 Exclusive Bonuses Worth ₹7,500+</h2>
-        <p class="text-gray-400 text-sm mt-2">Get these completely free when you join today for ₹299.</p>
+        <p class="text-gray-400 text-sm mt-2">Included 100% free with your access today.</p>
       </div>
 
       <div class="space-y-4">
-        <div class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-xl">
+        <div class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-2xl">
           <div class="flex items-center gap-3">
             <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">1</span>
             <div>
@@ -246,7 +325,7 @@
           <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded">Valued @ ₹1,999</span>
         </div>
 
-        <div class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-xl">
+        <div class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-2xl">
           <div class="flex items-center gap-3">
             <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">2</span>
             <div>
@@ -257,7 +336,7 @@
           <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded">Valued @ ₹2,499</span>
         </div>
 
-        <div class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-xl">
+        <div class="flex items-center justify-between p-4 bg-gray-950 border border-gray-800 rounded-2xl">
           <div class="flex items-center gap-3">
             <span class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm">3</span>
             <div>
@@ -274,33 +353,33 @@
   <!-- Social Proof / Testimonials -->
   <section class="py-20 px-4 sm:px-6 max-w-4xl mx-auto">
     <div class="text-center mb-12">
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">What Students & Resellers Are Saying</h2>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Verified Student & Reseller Reviews</h2>
       <div class="flex items-center justify-center gap-1 text-amber-400 mt-2">
-        ★★★★★ <span class="text-xs text-gray-400 ml-2">4.9/5 Average Rating</span>
+        ★★★★★ <span class="text-xs text-gray-400 ml-2">4.9/5 Based on 420+ Enrolled Students</span>
       </div>
     </div>
 
     <div class="grid sm:grid-cols-2 gap-6">
       <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl">
         <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-        <p class="text-gray-300 text-sm italic mb-4">"Bhai maine sirf ₹299 me ye course liya aur mere dropshipping store ka ROAS 1.8 se seedha 4.2 chala gaya! CBO aur Lookalike ka concept itna clearly kisi ne nahi samjhaya tha."</p>
+        <p class="text-gray-300 text-sm italic mb-4">"Bhai maine course liya aur mere dropshipping store ka ROAS 1.8 se seedha 4.2 chala gaya! CBO aur Lookalike ka concept itna clearly kisi ne nahi samjhaya tha."</p>
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-xs text-white">AK</div>
           <div>
             <div class="font-bold text-xs text-white">Aman K.</div>
-            <div class="text-[10px] text-gray-400">Shopify Dropshipper, Delhi</div>
+            <div class="text-[10px] text-gray-400">Shopify Dropshipper, Delhi • Verified Buyer</div>
           </div>
         </div>
       </div>
 
       <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl">
         <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-        <p class="text-gray-300 text-sm italic mb-4">"Resell rights ki wajah se maine is course ko apne WhatsApp group me 4 logon ko ₹299 me becha aur mera ₹1,200 ka profit day 1 par hi ban gaya! Best investment."</p>
+        <p class="text-gray-300 text-sm italic mb-4">"Resell rights ki wajah se maine is course ko apne WhatsApp group me 4 logon ko becha aur mera profit day 1 par hi ban gaya! Best digital asset."</p>
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-xs text-white">RS</div>
           <div>
             <div class="font-bold text-xs text-white">Rahul Sharma</div>
-            <div class="text-[10px] text-gray-400">Digital Marketer, Jaipur</div>
+            <div class="text-[10px] text-gray-400">Digital Marketer, Jaipur • Verified Buyer</div>
           </div>
         </div>
       </div>
@@ -314,17 +393,17 @@
     </div>
 
     <div class="space-y-4">
-      <div class="bg-gray-900/60 border border-gray-800 p-5 rounded-xl">
+      <div class="bg-gray-900/60 border border-gray-800 p-5 rounded-2xl">
         <h4 class="font-bold text-white text-sm sm:text-base mb-1">Payment ke baad mujhe course kaise milega?</h4>
         <p class="text-gray-400 text-xs sm:text-sm">Payment successful hote hi aapke screen par turant direct Google Drive folder ka access link open ho jayega jahan se aap online dekh sakte hain ya download kar sakte hain.</p>
       </div>
 
-      <div class="bg-gray-900/60 border border-gray-800 p-5 rounded-xl">
+      <div class="bg-gray-900/60 border border-gray-800 p-5 rounded-2xl">
         <h4 class="font-bold text-white text-sm sm:text-base mb-1">Kya ye course beginners ke liye suitable hai?</h4>
         <p class="text-gray-400 text-xs sm:text-sm">Haan! Course bilkul basic level (Account setup, campaign creation) se shuru hota hai aur step-by-step advanced scaling tak jata hai. Har koi aasaani se seekh sakta hai.</p>
       </div>
 
-      <div class="bg-gray-900/60 border border-gray-800 p-5 rounded-xl">
+      <div class="bg-gray-900/60 border border-gray-800 p-5 rounded-2xl">
         <h4 class="font-bold text-white text-sm sm:text-base mb-1">Resell Rights kaise kaam karta hai?</h4>
         <p class="text-gray-400 text-xs sm:text-sm">Aapko 100% Master Resell Rights milta hai. Aap is pure course ko apne Instagram, WhatsApp, ya website par bech sakte hain aur 100% paisa aapka hoga.</p>
       </div>
@@ -335,12 +414,12 @@
   <section class="py-16 px-4 text-center bg-gradient-to-t from-indigo-950/60 to-gray-950 border-t border-gray-900">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Start Mastering Meta Ads Today</h2>
-      <p class="text-gray-400 text-sm mb-8">Join 100+ videos masterclass + Resell Rights for just ₹299 before price increases back to ₹4,999.</p>
+      <p class="text-gray-400 text-sm mb-8">Join 100+ videos masterclass + Resell Rights for just ₹1 before price increases back to ₹4,999.</p>
 
-      <button onclick="openCheckoutModal()" class="w-full sm:w-auto px-10 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-indigo-600 hover:from-emerald-400 hover:to-indigo-500 text-white font-extrabold text-lg shadow-xl shadow-emerald-500/25 transition">
-        GET ACCESS NOW FOR ₹299
+      <button onclick="openCheckoutModal()" class="w-full sm:w-auto px-10 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-indigo-600 hover:from-emerald-400 hover:to-indigo-500 text-white font-extrabold text-lg shadow-xl shadow-emerald-500/25 transition cursor-pointer">
+        GET ACCESS NOW FOR ₹1
       </button>
-      <div class="text-xs text-gray-500 mt-4">One-Time Payment • Instant Access • No Recurring Charges</div>
+      <div class="text-xs text-gray-400 mt-4">One-Time Payment • Instant Access • No Recurring Charges</div>
     </div>
   </section>
 
@@ -370,20 +449,31 @@
   </footer>
 
   <!-- Sticky Mobile Bar -->
-  <div class="fixed bottom-0 left-0 right-0 p-3 bg-gray-950/95 backdrop-blur-md border-t border-gray-800 z-50 sm:hidden flex items-center justify-between">
+  <div class="fixed bottom-0 left-0 right-0 p-3 bg-gray-950/95 backdrop-blur-md border-t border-gray-800 z-40 sm:hidden flex items-center justify-between">
     <div>
       <div class="text-xs text-gray-400 line-through">₹4,999</div>
-      <div class="text-xl font-black text-white">₹299 <span class="text-[10px] text-emerald-400">94% OFF</span></div>
+      <div class="text-xl font-black text-white">₹1 <span class="text-[10px] text-emerald-400 font-bold">LIMITED DEAL</span></div>
     </div>
-    <button onclick="openCheckoutModal()" class="py-2.5 px-6 rounded-lg bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-500/30">
-      Buy Now @ ₹299
+    <button onclick="openCheckoutModal()" class="py-2.5 px-6 rounded-xl bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-500/30">
+      Buy Now @ ₹1
     </button>
+  </div>
+
+  <!-- FLOATING LIVE SALES TOAST NOTIFICATION (Psychological Urgency) -->
+  <div id="salesToast" class="fixed bottom-20 sm:bottom-6 left-4 sm:left-6 z-40 bg-gray-900/95 border border-indigo-500/40 backdrop-blur-md rounded-2xl p-3.5 shadow-2xl shadow-black/80 flex items-center gap-3 max-w-xs transition-all duration-500 translate-y-32 opacity-0 pointer-events-none">
+    <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black text-xs shrink-0">
+      ✓
+    </div>
+    <div class="text-left">
+      <div class="text-xs font-bold text-white" id="toastName">Aman from Delhi</div>
+      <div class="text-[10px] text-gray-400">Purchased Meta Ads Course • <span class="text-emerald-400" id="toastTime">2 mins ago</span></div>
+    </div>
   </div>
 
   <!-- CHECKOUT MODAL (Name, Email, Phone -> Razorpay) -->
   <div id="checkoutModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-gray-900 border border-gray-800 rounded-2xl max-w-md w-full p-6 relative">
-      <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">✕</button>
+      <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl cursor-pointer">✕</button>
       
       <div class="text-center mb-6">
         <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Instant Delivery Details</div>
@@ -407,13 +497,13 @@
           <input type="tel" id="custPhone" required placeholder="9876543210" pattern="[0-9]{10}" class="w-full bg-gray-950 border border-gray-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500">
         </div>
 
-        <div class="bg-gray-950 p-3 rounded-lg border border-gray-800 flex justify-between text-xs">
+        <div class="bg-gray-950 p-3 rounded-lg border border-gray-800 flex justify-between text-xs items-center">
           <span class="text-gray-400">Total Payable:</span>
-          <span class="font-bold text-white text-sm">₹299.00</span>
+          <span class="font-bold text-emerald-400 text-base">₹1.00</span>
         </div>
 
-        <button type="submit" id="payBtn" class="w-full py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 transition cursor-pointer">
-          PROCEED TO PAY ₹299 (UPI / CARDS)
+        <button type="submit" id="payBtn" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 transition cursor-pointer">
+          PROCEED TO PAY ₹1 (UPI / CARDS)
         </button>
       </form>
     </div>
@@ -422,12 +512,12 @@
   <!-- POLICY POPUP MODAL (For Razorpay & Meta Verification) -->
   <div id="policyModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-gray-900 border border-gray-800 rounded-2xl max-w-xl w-full p-6 sm:p-8 relative max-h-[85vh] overflow-y-auto">
-      <button onclick="closePolicyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">✕</button>
+      <button onclick="closePolicyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl cursor-pointer">✕</button>
       <div id="policyContent"></div>
     </div>
   </div>
 
-  <!-- JAVASCRIPT: TIMER, RAZORPAY & POLICY MODALS -->
+  <!-- JAVASCRIPT: TIMER, TOAST NOTIFICATION, RAZORPAY & CAPI -->
   <script>
     // Countdown Timer logic
     let time = 14 * 60 + 32;
@@ -435,15 +525,48 @@
       if (time > 0) time--;
       let m = Math.floor(time / 60);
       let s = time % 60;
-      document.getElementById('timer').innerText = `Offer ends in: ${m}m ${s < 10 ? '0' : ''}${s}s`;
+      document.getElementById('timer').innerText = `Offer closes in: ${m}m ${s < 10 ? '0' : ''}${s}s`;
     }, 1000);
+
+    // Live Recent Sales Toast (Psychology Trigger)
+    const buyers = [
+      { name: "Rahul S. from Pune", time: "2 mins ago" },
+      { name: "Pooja V. from Bengaluru", time: "4 mins ago" },
+      { name: "Mohit D. from Delhi NCR", time: "just now" },
+      { name: "Ankit J. from Mumbai", time: "7 mins ago" },
+      { name: "Vikram R. from Hyderabad", time: "3 mins ago" },
+      { name: "Suresh P. from Ahmedabad", time: "1 min ago" }
+    ];
+
+    let toastIndex = 0;
+    function showToast() {
+      const toast = document.getElementById('salesToast');
+      const b = buyers[toastIndex % buyers.length];
+      document.getElementById('toastName').innerText = b.name;
+      document.getElementById('toastTime').innerText = b.time;
+
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0');
+      }, 4000);
+
+      toastIndex++;
+    }
+    // Trigger toast every 9 seconds
+    setTimeout(() => {
+      showToast();
+      setInterval(showToast, 9000);
+    }, 2500);
 
     // Modal Handlers
     function openCheckoutModal() {
       // Trigger InitiateCheckout Pixel Event
       if (typeof fbq === 'function') {
         fbq('track', 'InitiateCheckout', {
-          value: 299.00,
+          value: 1.00,
           currency: 'INR',
           content_name: 'Meta Ads Mastery 2026'
         });
@@ -454,7 +577,7 @@
       document.getElementById('checkoutModal').classList.add('hidden');
     }
 
-    // Razorpay Integration
+    // Razorpay Integration (Price set to 100 paise = ₹1.00 for testing)
     const RAZORPAY_KEY = "rzp_live_ToVknbUG7BuLYL";
 
     function handleRazorpayPayment(e) {
@@ -466,7 +589,7 @@
 
       const options = {
         key: RAZORPAY_KEY,
-        amount: 29900, // In paise (299 * 100)
+        amount: 100, // 100 paise = ₹1.00 for purchase event testing
         currency: "INR",
         name: "Meta Ads Mastery 2026",
         description: "100+ Videos + Master Resell Rights",
@@ -490,13 +613,13 @@
                 email: email,
                 phone: phone,
                 name: name,
-                value: 299.00
+                value: 1.00
               })
             });
           } catch (err) {
             console.error('CAPI Error:', err);
           }
-          // Payment Success Handler - redirect to success page
+          // Redirect immediately to success page
           window.location.href = `success.html?payment_id=${response.razorpay_payment_id}`;
         },
         modal: {
@@ -524,7 +647,7 @@
         <h3 class="text-xl font-bold text-white mb-4">Terms and Conditions</h3>
         <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
           <p>By purchasing the Meta Ads Mastery 2026 course, you agree to these terms:</p>
-          <p><strong>1. Digital Access:</strong> Upon successful payment of ₹299, you are granted instant, lifetime digital access to the course material hosted on Google Drive.</p>
+          <p><strong>1. Digital Access:</strong> Upon successful payment, you are granted instant, lifetime digital access to the course material hosted on Google Drive.</p>
           <p><strong>2. Master Resell Rights:</strong> You are granted Master Resell Rights (MRR) allowing you to re-distribute and sell the course files. You may set your own price.</p>
           <p><strong>3. Disclaimer:</strong> Success with Meta ads depends on your personal effort, execution, and ad spend. We do not guarantee specific income or ROAS figures.</p>
         </div>
