@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meta Ads Mastery 2026 | 100+ Step-by-Step Videos + Master Resell Rights</title>
   
+  <!-- Meta Pixel Code (Dataset ID: 4580191425629483) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4580191425629483');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=4580191425629483&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -326,6 +344,31 @@
     </div>
   </section>
 
+  <!-- FOOTER (Mandatory for Meta Ads & Razorpay Compliance) -->
+  <footer class="border-t border-gray-900 bg-gray-950 py-12 px-6 text-center text-xs text-gray-400">
+    <div class="max-w-5xl mx-auto space-y-6">
+      
+      <!-- Compliance Links -->
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-gray-300">
+        <button onclick="openPolicyModal('privacy')" class="hover:text-white underline cursor-pointer">Privacy Policy</button>
+        <button onclick="openPolicyModal('terms')" class="hover:text-white underline cursor-pointer">Terms & Conditions</button>
+        <button onclick="openPolicyModal('refund')" class="hover:text-white underline cursor-pointer">Refund Policy</button>
+        <button onclick="openPolicyModal('contact')" class="hover:text-white underline cursor-pointer">Contact Us</button>
+      </div>
+
+      <!-- Disclaimer (Meta Ads Compliance) -->
+      <p class="text-[11px] text-gray-400 max-w-3xl mx-auto leading-relaxed">
+        <strong>Disclaimer:</strong> This website is not part of the Meta website, Facebook Inc., or Instagram. Additionally, this site is NOT endorsed by Meta in any way. FACEBOOK is a trademark of META PLATFORMS, Inc. Any financial numbers or results referenced are examples and should not be considered exact, actual or as a guarantee of earnings.
+      </p>
+
+      <div class="pt-6 border-t border-gray-900 text-gray-400 text-xs flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div>© 2026 Meta Ads Mastery • QubeTech Systems. All Rights Reserved.</div>
+        <div>Secured by Razorpay • Instant Digital Delivery</div>
+      </div>
+
+    </div>
+  </footer>
+
   <!-- Sticky Mobile Bar -->
   <div class="fixed bottom-0 left-0 right-0 p-3 bg-gray-950/95 backdrop-blur-md border-t border-gray-800 z-50 sm:hidden flex items-center justify-between">
     <div>
@@ -369,14 +412,22 @@
           <span class="font-bold text-white text-sm">₹299.00</span>
         </div>
 
-        <button type="submit" id="payBtn" class="w-full py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 transition">
+        <button type="submit" id="payBtn" class="w-full py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/25 transition cursor-pointer">
           PROCEED TO PAY ₹299 (UPI / CARDS)
         </button>
       </form>
     </div>
   </div>
 
-  <!-- JAVASCRIPT: TIMER & RAZORPAY INTEGRATION -->
+  <!-- POLICY POPUP MODAL (For Razorpay & Meta Verification) -->
+  <div id="policyModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl max-w-xl w-full p-6 sm:p-8 relative max-h-[85vh] overflow-y-auto">
+      <button onclick="closePolicyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">✕</button>
+      <div id="policyContent"></div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT: TIMER, RAZORPAY & POLICY MODALS -->
   <script>
     // Countdown Timer logic
     let time = 14 * 60 + 32;
@@ -389,6 +440,14 @@
 
     // Modal Handlers
     function openCheckoutModal() {
+      // Trigger InitiateCheckout Pixel Event
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          value: 299.00,
+          currency: 'INR',
+          content_name: 'Meta Ads Mastery 2026'
+        });
+      }
       document.getElementById('checkoutModal').classList.remove('hidden');
     }
     function closeCheckoutModal() {
@@ -397,7 +456,6 @@
 
     // Razorpay Integration
     const RAZORPAY_KEY = "rzp_live_ToVknbUG7BuLYL";
-    const DRIVE_LINK = "https://drive.google.com/drive/folders/1jVHQhdKzdU7yM6HuRsEKaBAsIx2k8XNU";
 
     function handleRazorpayPayment(e) {
       e.preventDefault();
@@ -421,9 +479,24 @@
         theme: {
           color: "#4f46e5"
         },
-        handler: function (response) {
-          // Payment Success Handler
-          // Redirect immediately to success confirmation page with drive access
+        handler: async function (response) {
+          // Trigger Meta Conversions API (CAPI Server-Side Tracking)
+          try {
+            fetch('/api/capi', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                eventName: 'Purchase',
+                email: email,
+                phone: phone,
+                name: name,
+                value: 299.00
+              })
+            });
+          } catch (err) {
+            console.error('CAPI Error:', err);
+          }
+          // Payment Success Handler - redirect to success page
           window.location.href = `success.html?payment_id=${response.razorpay_payment_id}`;
         },
         modal: {
@@ -435,6 +508,55 @@
 
       const rzp = new Razorpay(options);
       rzp.open();
+    }
+
+    // Mandatory Legal Policies for Razorpay & Meta
+    const policies = {
+      privacy: `
+        <h3 class="text-xl font-bold text-white mb-4">Privacy Policy</h3>
+        <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+          <p>We value your privacy. We only collect essential information such as your Name, Email, and Phone Number during checkout to provide you with instant access to the course and order confirmation.</p>
+          <p><strong>Payment Security:</strong> All financial transactions are processed securely through Razorpay payment gateway with 256-bit SSL encryption. We do not store any card, UPI PIN, or banking passwords on our servers.</p>
+          <p>We never sell, rent, or trade your personal data to any third-party marketing services.</p>
+        </div>
+      `,
+      terms: `
+        <h3 class="text-xl font-bold text-white mb-4">Terms and Conditions</h3>
+        <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+          <p>By purchasing the Meta Ads Mastery 2026 course, you agree to these terms:</p>
+          <p><strong>1. Digital Access:</strong> Upon successful payment of ₹299, you are granted instant, lifetime digital access to the course material hosted on Google Drive.</p>
+          <p><strong>2. Master Resell Rights:</strong> You are granted Master Resell Rights (MRR) allowing you to re-distribute and sell the course files. You may set your own price.</p>
+          <p><strong>3. Disclaimer:</strong> Success with Meta ads depends on your personal effort, execution, and ad spend. We do not guarantee specific income or ROAS figures.</p>
+        </div>
+      `,
+      refund: `
+        <h3 class="text-xl font-bold text-white mb-4">Refund & Cancellation Policy</h3>
+        <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+          <p><strong>Digital Download Policy:</strong> Since the Meta Ads Mastery Course is an instantly accessible, downloadable digital product provided via Google Drive immediately upon payment confirmation, <strong>all sales are final and non-refundable</strong>.</p>
+          <p>If you experience any technical difficulty accessing the Google Drive files or if the link is broken, please contact our support team at the email/phone provided below, and we will resolve it or grant alternate access within 24 hours.</p>
+        </div>
+      `,
+      contact: `
+        <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+        <div class="text-xs text-gray-300 space-y-3 leading-relaxed">
+          <p>If you have any questions, feedback, or need access support, please get in touch with us:</p>
+          <div class="bg-gray-950 p-4 rounded-xl border border-gray-800 space-y-2">
+            <p><strong>Business Name:</strong> QubeTech Systems / Meta Ads Mastery</p>
+            <p><strong>Email Support:</strong> support@qubeetechsystems.in</p>
+            <p><strong>WhatsApp Support:</strong> Available 10:00 AM - 7:00 PM IST</p>
+            <p><strong>Operating Location:</strong> India</p>
+          </div>
+        </div>
+      `
+    };
+
+    function openPolicyModal(type) {
+      document.getElementById('policyContent').innerHTML = policies[type];
+      document.getElementById('policyModal').classList.remove('hidden');
+    }
+
+    function closePolicyModal() {
+      document.getElementById('policyModal').classList.add('hidden');
     }
   </script>
 
