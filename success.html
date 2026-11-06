@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful! | Access Your Meta Ads Mastery Course</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen flex items-center justify-center p-4">
+
+  <div class="max-w-xl w-full bg-gray-900 border border-gray-800 rounded-3xl p-6 sm:p-10 text-center shadow-2xl relative overflow-hidden">
+    <div class="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl"></div>
+
+    <!-- Success Checkmark -->
+    <div class="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-500/30">
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+    </div>
+
+    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+      Payment Verified
+    </span>
+
+    <h1 class="text-2xl sm:text-4xl font-extrabold text-white mt-4 mb-2">Payment Successful! 🎉</h1>
+    <p class="text-sm text-gray-400 mb-6">Congratulations! You now have full lifetime access to the 100+ Videos Meta Ads Mastery Course + Master Resell Rights.</p>
+
+    <!-- Payment ID Display -->
+    <div class="bg-gray-950 border border-gray-800 rounded-xl p-3 mb-8 text-xs text-gray-400 flex justify-between items-center">
+      <span>Payment Ref:</span>
+      <span id="paymentRef" class="font-mono text-indigo-400 font-semibold">Verified</span>
+    </div>
+
+    <!-- MAIN ACCESS BUTTON -->
+    <a id="driveBtn" href="https://drive.google.com/drive/folders/1jVHQhdKzdU7yM6HuRsEKaBAsIx2k8XNU" target="_blank" class="block w-full py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-indigo-600 hover:from-emerald-400 hover:to-indigo-500 text-white font-extrabold text-lg shadow-xl shadow-emerald-500/25 transition transform hover:-translate-y-0.5 mb-6">
+      📂 OPEN GOOGLE DRIVE FOLDER NOW
+    </a>
+
+    <!-- Important Instructions -->
+    <div class="bg-gray-950/60 border border-gray-800/80 rounded-2xl p-5 text-left text-xs space-y-3 mb-6 text-gray-300">
+      <div class="font-bold text-white text-sm mb-1">📌 Important Steps:</div>
+      <div class="flex items-start gap-2">
+        <span>1.</span>
+        <span>Upar diye gaye button par click karke Google Drive folder ko turant <strong>"Bookmark / Star"</strong> kar lijiye taaki aap kabhi access na khoye.</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span>2.</span>
+        <span>Aap saare videos ko online bhi dekh sakte hain aur apne device me download bhi kar sakte hain.</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span>3.</span>
+        <span><strong>Resell Rights:</strong> Aap is folder ke saare videos ko aage kisi ko bhi bech kar 100% profit rakh sakte hain.</span>
+      </div>
+    </div>
+
+    <div class="text-xs text-gray-500">
+      Need any help? <a href="https://wa.me/?text=Hi%2C%20I%20purchased%20the%20Meta%20Ads%20course" class="text-indigo-400 hover:underline">Contact Support on WhatsApp</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Grab payment_id from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const payId = urlParams.get('payment_id');
+    if (payId) {
+      document.getElementById('paymentRef').innerText = payId;
+    }
+  </script>
+
+</body>
+</html>
